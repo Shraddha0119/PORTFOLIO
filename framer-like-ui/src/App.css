@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  background: #f6f6f6;
+  color: #222;
+}
+
+/* NAVBAR WRAPPER */
+.navbar {
+  position: sticky;          /* ❗ fixed hata diya */
+  top: 24px;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+}
+
+/* PILL */
+.nav-pill {
+  background: #fff;
+  border-radius: 999px;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* AVATAR */
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  color: #333;
+}
+
+.nav-links span {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.nav-links span:hover {
+  opacity: 1;
+}
+
+/* CONTACT */
+.contact-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+
+/* HERO */
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px;
+}
+
+/* LEFT */
+.hero-left {
+  text-align: right;
+}
+
+.small-name {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+
+.hero-left h1 {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+/* IMAGE */
+.hero-image-wrap {
+  position: relative;
+  perspective: 1200px;
+}
+
+.hero-image {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* HI BADGE */
+.hi-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: #5b6cff;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* RIGHT */
+.hero-right h1 {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.hero-right p {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* TOGGLE */
+.toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.toggle-dot {
+  width: 26px;
+  height: 12px;
+  border-radius: 999px;
+  background: #d6d6ff;
+  position: relative;
+}
+
+.toggle-dot::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #5b6cff;
+  border-radius: 50%;
+  top: 1px;
+  left: 2px;
+}
+/* hero senction ends */
+
+/* service section start */
+.services {
+  min-height: 100vh;
+  padding: 120px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f6f6;
+}
+
+.services-left {
+  max-width: 520px;
+}
+
+.services-left h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.services-left p {
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.services-left ul {
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.services-left li {
+  padding: 18px 0;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* IMAGE */
+.services-image-wrap {
+  perspective: 1200px;
+}
+
+.services-image-wrap img {
+  width: 340px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+}
+
+.floating {
+  position:fixed;
+  top: 12px;      /* hero ke paas */
+  right:12 px;
+  z-index: 20;
+  transform-style: preserve-3d;
+}
+
