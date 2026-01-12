@@ -63,33 +63,65 @@ const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
           <h1>WEB</h1>
         </div>
 
-        {/* IMAGE */}
-        <motion.div
-            className="hero-image-wrap floating"
-            style={{
-            rotateY,
-            x,
-            y,
-            scale,
-           }}
-         initial={{ rotateY: -25, opacity: 0 }}
-         animate={{ rotateY: 0, opacity: 1 }}
-         transition={{ duration: 1 }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1527980965255-d3b416303d12"
-            alt="hero"
-            className="hero-image"
-          />
+   {/* IMAGE */}
+  <motion.div
+  className="hero-image-wrap floating"
+  style={{ rotateY, x, y, scale }}
+  initial={{ rotateY: -25, opacity: 0 }}
+  animate={{ rotateY: 0, opacity: 1 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+>
+  <img
+    src="https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+    alt="hero"
+    className="hero-image"
+  />
 
-          {/* HI CIRCLE */}
-          <div className="hi-badge">Hi</div>
-        </motion.div>
+  {/* HI BADGE */}
+  <motion.div
+    className="hi-badge"
+    initial="rest"
+    whileHover="hover"
+    animate="rest"
+  >
+    {/* HAND */}
+    <motion.span
+      variants={{
+        rest: { rotate: 0 },
+        hover: {
+          rotate: [0, 20, -10, 20, 0],
+          transition: {
+            duration: 0.6,
+            repeat: Infinity,
+            repeatType: "loop",
+          },
+        },
+      }}
+      style={{ display: "inline-block" }}
+    >
+      👋
+    </motion.span>
+
+    {/* TEXT — ONLY ON HOVER */}
+    <motion.span
+      className="hi-text"
+      variants={{
+        rest: { opacity: 0, y: 6 },
+        hover: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.2 }}
+    >
+      Hi
+    </motion.span>
+  </motion.div>
+</motion.div>
+
+
 
         {/* RIGHT TEXT */}
         <div className="hero-right">
           <h1>DEVELOPER</h1>
-          <p>I’m a Mern stack / Full stack Developer</p>
+          <p className="small-name">I’m a Mern stack / Full stack Developer</p>
         </div>
       </section>
 

@@ -1,25 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, system-ui, sans-serif;
-}
-
-body {
-  background: #f6f6f6;
-  color: #222;
-}
-
-/* NAVBAR WRAPPER */
+/* ================= NAVBAR ================= */
 .navbar {
-  position: sticky;          /* ❗ fixed hata diya */
+  position: sticky;
   top: 24px;
-  z-index: 50;
+  z-index: 100;
   display: flex;
   justify-content: center;
 }
 
-/* PILL */
 .nav-pill {
   background: #fff;
   border-radius: 999px;
@@ -30,19 +17,16 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-/* AVATAR */
 .nav-avatar {
   width: 34px;
   height: 34px;
   border-radius: 50%;
 }
 
-/* LINKS */
 .nav-links {
   display: flex;
   gap: 22px;
   font-size: 14px;
-  color: #333;
 }
 
 .nav-links span {
@@ -54,38 +38,36 @@ body {
   opacity: 1;
 }
 
-/* CONTACT */
 .contact-btn {
   background: #111;
   color: #fff;
   border: none;
   padding: 8px 18px;
   border-radius: 999px;
-  font-size: 13px;
   cursor: pointer;
 }
 
-
-
-/* HERO */
+/* ================= HERO ================= */
 .hero {
-  min-height: 75vh;
-  display: flex;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: center;
   gap: 60px;
   padding: 40px;
+  position: relative;
+  isolation: isolate; /* 🔥 KEY FIX */
 }
 
-/* LEFT */
+/* LEFT TEXT */
 .hero-left {
   text-align: right;
+  z-index: 10;
 }
 
 .small-name {
   font-size: 12px;
   letter-spacing: 1px;
-  margin-bottom: 6px;
   opacity: 0.7;
 }
 
@@ -97,7 +79,9 @@ body {
 /* IMAGE */
 .hero-image-wrap {
   position: relative;
+  z-index: 2;
   perspective: 1200px;
+  transform-style: preserve-3d;
 }
 
 .hero-image {
@@ -111,20 +95,39 @@ body {
 /* HI BADGE */
 .hi-badge {
   position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background: #5b6cff;
-  color: white;
-  width: 70px;
-  height: 70px;
+  bottom: -18px;
+  left: -18px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  background: #5b6cff;
   display: grid;
   place-items: center;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* RIGHT */
+/* Hi text */
+.hi-text {
+  position: absolute;
+  bottom: -22px;
+  font-size: 12px;
+  color: #111;
+  background: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+
+/* RIGHT TEXT */
+.hero-right {
+  text-align: left;
+  z-index: 10;
+}
+
 .hero-right h1 {
   font-size: 80px;
   font-weight: 700;
@@ -160,16 +163,14 @@ body {
   top: 1px;
   left: 2px;
 }
-/* hero senction ends */
 
-/* service section start */
+/* ================= SERVICES ================= */
 .services {
   min-height: 100vh;
   padding: 120px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f6f6f6;
 }
 
 .services-left {
@@ -189,16 +190,13 @@ body {
 .services-left ul {
   margin-top: 40px;
   list-style: none;
-  padding: 0;
 }
 
 .services-left li {
   padding: 18px 0;
-  font-size: 18px;
   border-bottom: 1px solid #ddd;
 }
 
-/* IMAGE */
 .services-image-wrap {
   perspective: 1200px;
 }
@@ -210,12 +208,3 @@ body {
   border-radius: 24px;
   box-shadow: 0 40px 80px rgba(0,0,0,0.2);
 }
-
-.floating {
-  position:fixed;
-  top: 12px;      /* hero ke paas */
-  right:12 px;
-  z-index: 20;
-  transform-style: preserve-3d;
-}
-
