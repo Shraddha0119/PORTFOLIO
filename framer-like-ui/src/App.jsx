@@ -13,7 +13,8 @@ export default function App() {
 
   // 🔥 Scroll based motion
 const rotateY = useTransform(scrollYProgress, [0, 1], [20, 0]);
-const x = useTransform(scrollYProgress, [0, 1], [1, 0]);
+const x = useTransform(scrollYProgress, [0, 1], [60, 0]);
+
 const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
 const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 
@@ -55,7 +56,7 @@ const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 {/* navbar end */}
 
 
-      {/* HERO */}
+      {/* HERO section */}
       <section className="hero">
         {/* LEFT TEXT */}
         <div className="hero-left">
@@ -64,13 +65,21 @@ const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
         </div>
 
    {/* IMAGE */}
-  <motion.div
-  className="hero-image-wrap floating"
-  style={{ rotateY, x, y, scale }}
-  initial={{ rotateY: -25, opacity: 0 }}
-  animate={{ rotateY: 0, opacity: 1 }}
+    
+<motion.div
+  className="hero-image-wrap"
+  initial={{ rotateY: -25, opacity: 0, y: 40 }}
+  animate={{ opacity: 1 }}
   transition={{ duration: 1, ease: "easeOut" }}
+  style={{
+    rotateY,
+    x,
+    y,
+    scale,
+  }}
 >
+
+
   <img
     src="https://images.unsplash.com/photo-1527980965255-d3b416303d12"
     alt="hero"
@@ -111,7 +120,7 @@ const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
       }}
       transition={{ duration: 0.2 }}
     >
-      Hi
+     hi
     </motion.span>
   </motion.div>
 </motion.div>
