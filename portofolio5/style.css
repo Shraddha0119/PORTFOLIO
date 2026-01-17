@@ -51,6 +51,7 @@ nav a:hover {
 }
 
   /* =======================hero==================================== */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -97,6 +98,8 @@ nav a:hover {
   max-width: 260px;
   line-height: 1.4;
 }
+
+/* =========================media query ================================== */
 
 /* 🔹 RESPONSIVE */
 @media (max-width: 900px) {
