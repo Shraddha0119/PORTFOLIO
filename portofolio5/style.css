@@ -59,45 +59,58 @@ nav a:hover {
   justify-content: center;
   gap: 2rem;                    /* tight spacing */
   padding: 2rem;
+  
 }
 
 /* LEFT */
 .hero-left {
   text-align: right;
-}
 
-.name {
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  margin-bottom: 0.4rem;
+  height: 100vh;
+  width: 50%;
 }
-
-.title {
+.name1{
+  padding-top:267px;
+ justify-items: center;
+   margin-bottom:1px;
+}
+.title1 {
   font-size: 5.5rem;            /* BIG TEXT */
   font-weight: 800;
-  line-height: 1;
-  white-space: nowrap;
+  padding-top:53px;
+  margin-top: -70px;
 }
+
 
 /* CENTER IMAGE */
 .hero-center img {
   width: 300px;
-  height: 420px;                /* tall rectangle */
+  height: 420px;                
   object-fit: cover;
-  border-radius: 18px;          /* Framer look */
+  border-radius: 18px;         
+ 
 }
 
 /* RIGHT */
 .hero-right {
+  height: 100vh;
+  width: 50%;
   text-align: left;
+ 
+}
+.name2{
+    margin-top: 0;
+  padding-bottom: 200px;
 }
 
-.role {
-  font-size: 1rem;
-  margin-top: 0.6rem;
-  max-width: 260px;
-  line-height: 1.4;
+.title2{
+    margin-bottom: 5px;
+    font-size: 5.5rem;            /* BIG TEXT */
+  font-weight: 800;
+  padding-top:239px;
 }
+
+
 
 /* =========================media query ================================== */
 
