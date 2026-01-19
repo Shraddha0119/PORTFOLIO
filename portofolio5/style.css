@@ -165,24 +165,105 @@ nav a:hover {
 /* =========================media query ================================== */
 
 /* 🔹 RESPONSIVE */
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) {
+
   .hero {
     flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
   }
 
   .hero-left,
   .hero-right {
+    width: 100%;
+    height: auto;
     text-align: center;
   }
 
-  .title {
-    font-size: 3.2rem;
+  .name1 {
+    padding-top: 180px;
   }
 
-  .hero-center img {
-    width: 220px;
-    height: 320px;
+  .title1,
+  .title2 {
+    font-size: 4rem;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .hero-center {
+    width: 340px;
+    height: 380px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .name1,
+  .name2 {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  .title1,
+  .title2 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-center {
+    width: 280px;
+    height: 340px;
+    perspective: 900px;
+  }
+
+  .hi-bubble {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .title1,
+  .title2 {
+    font-size: 2.4rem;
+  }
+
+  .hero-center {
+    width: 240px;
+    height: 300px;
+  }
+
+  .hi-bubble {
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+    bottom: -6px;
+    left: -6px;
   }
 }
