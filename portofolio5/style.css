@@ -267,3 +267,106 @@ nav a:hover {
     left: -6px;
   }
 }
+
+/* ================= SERVICES ================= */
+.services {
+  padding: 80px 60px;
+}
+
+.services-left {
+  max-width: 600px;
+}
+
+.services-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+
+.services-desc {
+  margin: 20px 0 40px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Accordion list */
+.accordion .item {
+  padding: 20px 0;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion .item::after {
+  content: "⌃";
+  position: absolute;
+  right: 0;
+  transform: rotate(180deg);
+  font-size: 18px;
+}
+
+/* ==============abot me============== */
+
+.about {
+  padding: 100px 60px;
+}
+
+.about-left {
+  max-width: 620px;
+}
+
+.about-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.about-desc {
+  color: #555;
+  line-height: 1.7;
+  font-size: 16px;
+  max-width: 520px;
+  margin-bottom: 50px;
+}
+
+/* stats */
+.about-stats {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.stat h3 {
+  font-size: 4rem;
+  color: #5b6cff;
+  margin: 0;
+}
+
+.stat p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* contact */
+.about-contact {
+  display: flex;
+  gap: 80px;
+  font-size: 15px;
+  color: #444;
+}
