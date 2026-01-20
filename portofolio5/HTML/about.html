@@ -1,0 +1,293 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ME</title>
+ 
+
+
+  <style>
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* FIXED IMAGE */
+.fixed-image {
+  position: fixed;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  height: 520px;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.fixed-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+
+/* CONTENT */
+.content {
+  width: 55%;
+  padding: 120px 60px;
+}
+
+.about-section {
+  min-height: 100vh;
+  padding-bottom: 120px;
+}
+
+/* TITLES */
+.big-title {
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* TEXT */
+.about-section p {
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* ACCORDION */
+.accordion {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.accordion li {
+  padding: 16px 0;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+/* TIMELINE */
+.timeline div {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* TECH STACK */
+.tech-list div {
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tech-list h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .fixed-image {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    padding: 100px 30px;
+  }
+
+  .big-title {
+    font-size: 3rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+
+<!-- IMAGE HOLDER (STAYS FIXED) -->
+<div class="fixed-image">
+  <img id="sectionImage" src="images/about.jpg" alt="Profile">
+</div>
+
+<!-- CONTENT -->
+<main class="content">
+
+  <!-- SECTION 1 -->
+  <section class="about-section" data-image="../images/passport.png">
+    <h1 class="big-title">ABOUT ME</h1>
+    <h3 class="name">DUNCAN ROBERT</h3>
+    <p>
+      I’m a digital designer and Framer developer passionate about crafting
+      meaningful, user-centered experiences.
+    </p>
+    <p>
+      With a strong foundation in visual design and interactive systems,
+      I bring ideas to life through thoughtful design and smooth animations.
+    </p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="about-section" data-image="../images/pro.jpeg">
+    <h1 class="big-title">WHAT I CAN DO FOR YOU</h1>
+    <p>
+      As a digital designer, I craft experiences that connect deeply
+      and spark creativity.
+    </p>
+
+    <ul class="accordion">
+      <li>1. Full-Stack Development (MERN)</li>
+      <li>2. Frontend Development</li>
+      <li>3. Backend Development</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="about-section" data-image="../images/passport.png">
+    <h1 class="big-title">DISCOVER MY JOURNEY IN DESIGN</h1>
+    <p>
+      From curious creator to full-time designer, my path has been shaped
+      by storytelling and purpose-driven design.
+    </p>
+
+    <div class="timeline">
+      <div>
+        <strong>NovaWorks Agency</strong>
+        <span>2023 – Present</span>
+      </div>
+      <div>
+        <strong>BrightLabs Digital</strong>
+        <span>2020 – 2023</span>
+      </div>
+      <div>
+        <strong>PixelForge Interactive</strong>
+        <span>2018 – 2020</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="about-section" data-image="../images/pro.jpeg">
+    <h1 class="big-title">MY TECH STACK</h1>
+    <p>
+      I build with intention. Every tool supports how I think and design.
+    </p>
+
+    <div class="tech-list">
+      <div>
+        <h4>Framer</h4>
+        <p>Interactive and responsive web design.</p>
+      </div>
+      <div>
+        <h4>Figma</h4>
+        <p>Clean UI and collaborative workflows.</p>
+      </div>
+      <div>
+        <h4>X</h4>
+        <p>Content, inspiration, and community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION-5 -->
+   
+
+  
+
+</main>
+
+
+</body>
+</html>
+
+
+
+
+
+  <!-- ===== SCRIPT ===== -->
+   <script> 
+    // const img = document.getElementById("profileImg");
+
+    // window.addEventListener("scroll", () => {
+    //   const y = window.scrollY;
+
+    //   img.style.opacity = 0;
+
+    //   setTimeout(() => {
+    //     if (y < 300) {
+    //       img.src = "../images/passport.png";
+    //     } else if (y < 700) {
+    //       img.src = "../images/pro.jpeg";
+    //     } else {
+    //       img.src = "../images/passport.png";
+    //     }
+    //     img.style.opacity = 1;
+    //   }, 200);
+    // });
+  
+
+  const sections = document.querySelectorAll(".about-section");
+const image = document.getElementById("sectionImage");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const newImage = entry.target.getAttribute("data-image");
+
+        image.style.opacity = "0";
+        setTimeout(() => {
+          image.src = newImage;
+          image.style.opacity = "1";
+        }, 300);
+      }
+    });
+  },
+  {
+    threshold: 0.6
+  }
+);
+
+sections.forEach(section => observer.observe(section));
+
+ </script> 
+
+
+    
+</body>
+</html>
