@@ -20,10 +20,7 @@
 
   // ===============service============//
 
-
 const icons = document.querySelectorAll('.icon');
-
-// Create floating image element
 const floatingImage = document.createElement('img');
 floatingImage.className = 'floating-image';
 document.body.appendChild(floatingImage);
@@ -32,17 +29,34 @@ icons.forEach(icon => {
   const parentItem = icon.closest('.service-item');
   const imageSrc = parentItem.getAttribute('data-image');
 
-  icon.addEventListener('mouseenter', (e) => {
+  icon.addEventListener('mouseenter', () => {
     floatingImage.src = imageSrc;
-    const rect = icon.getBoundingClientRect();
-    floatingImage.style.top = `${rect.bottom + window.scrollY + 5}px`;
-    floatingImage.style.left = `${rect.left + window.scrollX}px`;
-    floatingImage.style.opacity = 1;
+    floatingImage.classList.add('visible');
+  });
+
+  icon.addEventListener('mousemove', (e) => {
+    // Position image smoothly near cursor
+    floatingImage.style.top = `${e.pageY - 60}px`;
+    floatingImage.style.left = `${e.pageX + 20}px`;
   });
 
   icon.addEventListener('mouseleave', () => {
-    floatingImage.style.opacity = 0;
+    floatingImage.classList.remove('visible');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
