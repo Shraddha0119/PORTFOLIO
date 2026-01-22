@@ -164,54 +164,128 @@ nav a:hover {
 
 
 /* ================= SERVICES ================= */
+/* General page styling */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Services section layout */
 .services {
-  padding: 80px 60px;
-}
-
-.services-left {
-  max-width: 600px;
-}
-
-.services-header {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.services-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: 1px;
+/* Left column */
+.services-left {
+  flex: 1;
 }
 
-
-
-
-
+.services-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
 
 .services-desc {
-  margin: 20px 0 40px;
-  color: #555;
-  line-height: 1.6;
   font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
 }
 
-/* Accordion list */
-.accordion .item {
-  padding: 20px 0;
-  font-weight: 600;
+/* Accordion styling */
+.accordion {
+  border-top: 1px solid #ddd;
+}
+
+.service-item {
   border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  position: relative;
+  padding: 20px 0;
 }
 
-.accordion .item::after {
-  content: "⌃";
-  position: absolute;
-  right: 0;
-  transform: rotate(180deg);
+/* Service head with icon */
+.service-head {
   font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
+
+.service-head:hover {
+  color: #0078d7; /* accent color */
+}
+
+.icon {
+  font-size: 18px;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-item.active .icon {
+  transform: rotate(180deg);
+  color: #0078d7;
+}
+
+/* Accordion body with smooth transition */
+.service-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  margin-top: 10px;
+}
+
+.service-item.active .service-body {
+  max-height: 200px; /* enough space for text */
+  opacity: 1;
+}
+
+/* Right preview image */
+.service-preview {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.service-preview img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Container for floating image near icon */
+.floating-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
 
 /* ==============abot me============== */
 
@@ -370,71 +444,84 @@ nav a:hover {
 
 /*===================== FAQquestion==================== */
 
+/* ===== FAQ SECTION ===== */
 .faq {
-  padding: 120px 60px;
-  display: flex;
-  gap: 80px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  display: flex;                 /* 🔥 GRID hatao */
+  justify-content: space-between;
   align-items: flex-start;
+  gap: 80px;
 }
 
 /* LEFT */
+/* LEFT */
 .faq-left {
-  max-width: 420px;
+  width: 40%;
 }
-
 .faq-left h2 {
-  font-size: 3.2rem;
+  font-size: 64px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
 }
 
 .faq-left p {
-  color: #555;
+  font-size: 18px;
   line-height: 1.7;
+  color: #555;
+  max-width: 420px;
 }
 
 /* RIGHT */
 .faq-right {
-  flex: 1;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ITEM */
 .faq-item {
   border-bottom: 1px solid #ddd;
-  padding: 20px 0;
+  padding: 28px 0;
+  cursor: pointer;
 }
 
+/* QUESTION */
 .faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  font-size: 18px;
   font-weight: 600;
 }
 
+/* ICON */
 .faq-question .icon {
-  font-size: 20px;
-  transform: rotate(180deg);
+  font-size: 22px;
   transition: transform 0.3s ease;
 }
 
+/* ANSWER (HIDDEN BY DEFAULT) */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
-  color: #555;
-  line-height: 1.6;
-  padding-right: 40px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+  transition: max-height 0.4s ease, padding-top 0.3s ease;
 }
 
-/* ACTIVE */
+/* ACTIVE STATE */
 .faq-item.active .faq-answer {
   max-height: 200px;
-  margin-top: 15px;
+  padding-top: 15px;
 }
 
 .faq-item.active .icon {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 
 
@@ -645,6 +732,20 @@ nav a:hover {
 }
 
 
+@media (max-width: 950px) {
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .faq-left h2 {
+    font-size: 42px;
+  }
+}
+
+
+
+
 @media (max-width: 480px) {
 
   .title1,
@@ -669,11 +770,8 @@ nav a:hover {
   .footer-bottom {
     padding: 20px;
   }
-}
 
-@media (max-width: 480px) {
-
-  .title1,
+    .title1,
   .title2 {
     font-size: 2.4rem;
   }
@@ -696,5 +794,7 @@ nav a:hover {
     padding: 20px;
   }
 }
+
+
 
 
