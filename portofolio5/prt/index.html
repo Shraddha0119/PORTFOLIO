@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Right Side Rotation & Movement</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 300vh;
+  }
+
+  .section {
+    height: 100vh;
+  }
+
+  .section1 { background: #f0f0f0; }
+  .section2 { background: #d0e0ff; }
+  .section3 { background: #ffe0d0; }
+
+  #imageWrapper {
+    width: 200px;
+    height: 260px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1400px;
+    z-index: 10;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: right center; /* RIGHT hinge */
+  }
+
+  .card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+
+  .card .back {
+    transform: rotateY(180deg);
+  }
+</style>
+</head>
+
+<body>
+
+<div id="imageWrapper">
+  <div class="card">
+    <img src="./passport.png" class="front">
+    <img src="./pro.jpeg" class="back">
+  </div>
+</div>
+
+<div class="section section1"></div>
+<div class="section section2"></div>
+<div class="section section3"></div>
+
+
+<script>
+  const wrapper = document.getElementById("imageWrapper");
+  const card = document.querySelector(".card");
+
+  const maxScroll = window.innerHeight * 2;
+
+  window.addEventListener("scroll", () => {
+    const scroll = Math.min(window.scrollY, maxScroll);
+    const progress = scroll / maxScroll;
+
+    let rotateY = 0;
+    let rotateZ = 0;
+    let top = 50;
+    let left = 50;
+
+    /* ========= PHASE 1 =========
+       Section 1 → Section 2
+       Rotate + flip to BACK
+    ============================ */
+    if (progress <= 0.5) {
+      const p = progress / 0.5;
+
+      rotateY = -p * 160;   // front → back
+      rotateZ = p * 8;
+    }
+
+    /* ========= PHASE 2 =========
+       Section 2 → Section 3
+       Rotate BACK to front + move
+    ============================ */
+    if (progress > 0.5) {
+      const p = (progress - 0.5) / 0.5;
+
+      rotateY = 160 + p * -160;   // 🔥 back → front
+      rotateZ = 8 + p * 2;        // subtle rotation
+
+      left = 50+ p * 30;         // right
+      top = 30 + p * 30;          // down
+    }
+
+    wrapper.style.left = left + "%";
+    wrapper.style.top = top + "%";
+
+    card.style.transform = `
+      rotateY(${rotateY}deg)
+      rotateZ(${rotateZ}deg)
+    `;
+  });
+</script>
+
+
+</body>
+</html>

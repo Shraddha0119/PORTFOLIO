@@ -81,25 +81,16 @@ nav a:hover {
   margin-top: -70px;
 }
 
-
-/* CENTER IMAGE */
-/* .hero-center img {
-  width: 300px;
-  height: 420px;                
-  object-fit: cover;
-  border-radius: 18px;         
- 
-} */
  /*============================================== image=================================== */
-
-.hero-center{
+ 
+/* .hero-center{
   width: 400px;
   height: 430px;
   perspective: 1200px;
   margin: 50px auto;
-}
+}  */
 
-.profile-wrapper{
+/* .profile-wrapper{
   width: 100%;
   height: 100%;
   position: relative;
@@ -109,7 +100,43 @@ nav a:hover {
 .hero-center:hover .profile-wrapper{
    transform: rotateY(30deg);
    
-}
+}  */
+
+
+
+  #imageWrapper {
+    width: 250px;
+    height: 350px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1400px;
+    z-index: 10;
+  }
+
+  .profile-wrapper {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: right center; /* RIGHT hinge */
+  }
+
+  .profile-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+
+  .profile-wrapper .back {
+    transform: rotateY(180deg);
+  }
+
+  .section1 { background: #f0f0f0; }
+  .section2 { background: #d0e0ff; }
+  .section3 { background: #ffe0d0; }
 
 
 
@@ -122,6 +149,12 @@ nav a:hover {
   object-fit: cover;
   border-radius: 24px;
 }
+
+
+
+
+
+
 
 /* Hi Bubble / Icon */
 .hi-bubble {
@@ -180,16 +213,16 @@ body {
 }
 
 /* Services section layout */
-.services {
+/* .services {
   display: flex;
   gap: 60px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin:auto;
   border: #222 solid;
-}
+} */
 
 /* Left column */
-.services-left {
+/* .services-left {
   flex: 1;
 }
 
@@ -208,7 +241,7 @@ body {
 }
 
 /* Accordion styling */
-.accordion {
+/* .accordion {
   border-top: 1px solid #ddd;
 }
 
@@ -218,7 +251,7 @@ body {
 }
 
 /* Service head with icon */
-.service-head {
+/* .service-head {
   font-size: 18px;
   font-weight: 600;
   display: flex;
@@ -226,13 +259,13 @@ body {
   align-items: center;
   cursor: pointer;
   transition: color 0.3s ease;
-}
+} */
 
-.service-head:hover {
+/* .service-head:hover {
   color: #0078d7; /* accent color */
-}
+/* }  */
 
-.icon {
+ .icon {
   font-size: 18px;
   color: #333;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -241,7 +274,7 @@ body {
 .service-item.active .icon {
   transform: rotate(180deg);
   color: #0078d7;
-}
+} 
 
 /* Accordion body with smooth transition */
 .service-body {
@@ -253,33 +286,85 @@ body {
   line-height: 1.5;
   color: #444;
   margin-top: 10px;
+}  
+
+/* Parent section */
+.services {
+  display: flex;
+  justify-content: flex-start; /* push content to the left */
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh; /* full height for balance */
 }
+
+/* Left side content */
+.services-left {
+  flex: 0 0 50%; /* take half width, adjust as needed */
+  padding: 40px;
+  background-color: #f26e6e;
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: inset -1px 0 0 #ddd;
+}
+
+/* Typography */
+.services-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.services-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Accordion styling */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.service-head {
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .service-body {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+} */
+
+.icon {
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+
+
 
 .service-item.active .service-body {
   max-height: 200px; /* enough space for text */
   opacity: 1;
 }
 
-/* Right preview image */
-.service-preview {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 40px;
-}
 
-.service-preview img {
-  max-width: 100%;
-  height: auto;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
 /* Container for floating image near icon */
 
-.floating-image {
+/* .floating-image {
   position: absolute;
   width: 220px;
   height: 140px;
@@ -295,7 +380,27 @@ body {
 .floating-image.visible {
   opacity: 1;
   transform: rotate(10deg) skewX(3deg) skewY(-4deg) scale(1);
+} */
+
+.floating-image {
+  position: absolute;
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(10px) scale(0.95); /* subtle lift instead of skew */
 }
+
+.floating-image.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1); /* smooth pop */
+}
+
 
 
 
@@ -306,11 +411,14 @@ body {
 .about {
   padding: 100px 60px;
   scroll-margin-top: 100px; /* navbar height */
+  
 }
 
 .about-left {
-  max-width: 620px;
+  max-width: 1400px;
+  border: #222 solid;
 }
+
 
 .about-title {
   font-size: 3.2rem;
