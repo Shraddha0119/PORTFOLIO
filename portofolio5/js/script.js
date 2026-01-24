@@ -95,57 +95,65 @@ items.forEach(item => {
 
 
 
+// image rotate flipping//
 
-// image rotate animation//
 
 const wrapper = document.getElementById("imageWrapper");
-  const profilewrapper = document.querySelector(".profile-wrapper");
+const profileWrapper = document.querySelector(".profile-wrapper");
 
-  const maxScroll = window.innerHeight * 2;
+const hero = document.querySelector(".section1");
+const services = document.querySelector(".section2");
+const about = document.querySelector(".section3");
 
-  window.addEventListener("scroll", () => {
-    const scroll = Math.min(window.scrollY, maxScroll);
-    const progress = scroll / maxScroll;
+window.addEventListener("scroll", () => {
+  const scroll = window.scrollY;
 
-    let rotateY = 0;
-    let rotateZ = 0;
-    let top = 50;
-    let left = 50;
+  const heroStart = hero.offsetTop;
+  const heroEnd = heroStart + hero.offsetHeight;
 
-    /* ========= PHASE 1 =========
-       Section 1 → Section 2
-       Rotate + flip to BACK
-    ============================ */
-    if (progress <= 0.5) {
-      const p = progress / 0.5;
+  const serviceStart = services.offsetTop;
+  const serviceEnd = serviceStart + services.offsetHeight;
 
-      rotateY = -p * 160;   // front → back
-      rotateZ = p * 8;
+  let rotateY = 0;
+  let rotateZ = 0;
+  let left = 50; // 👈 DEFAULT CENTER
+
+  /* ===== HERO → SERVICES ===== */
+  if (scroll >= heroStart && scroll < heroEnd) {
+    const p = (scroll - heroStart) / hero.offsetHeight;
+    rotateY = -180 * p;
+    rotateZ = 6 * p;
+    left = 50; // stay center
+  }
+
+  /* ===== SERVICES → ABOUT ===== */
+  if (scroll >= serviceStart && scroll < serviceEnd) {
+    const p = (scroll - serviceStart) / services.offsetHeight;
+    rotateY = 180 + (-180 * p);
+    rotateZ = 6 + (4 * p);
+
+    left = 50 + (25 * p); // 🔥 center → right
+  }
+
+  /* ===== AFTER ABOUT ===== */
+  if (scroll >= serviceEnd) {
+    rotateY = 0;
+    rotateZ = 10;
+    left = 75; // 🔒 stick right
+  }
+
+  wrapper.style.left = left + "%";
+
+  profileWrapper.style.transform = `
+    rotateY(${rotateY}deg)
+    rotateZ(${rotateZ}deg)
+  `;
 
 
-    }
 
-    /* ========= PHASE 2 =========
-       Section 2 → Section 3
-       Rotate BACK to front + move
-    ============================ */
-    if (progress > 0.5) {
-      const p = (progress - 0.5) / 0.5;
 
-      rotateY = 160 + p * -160;   // 🔥 back → front
-      rotateZ = 8 + p * 2;        // subtle rotation
+});
 
-      left = 50+ p * 30;         // right
-      top = 30 + p * 30;          // down
-    }
 
-    wrapper.style.left = left + "%";
-    wrapper.style.top = top + "%";
-
-    profilewrapper.style.transform = `
-      rotateY(${rotateY}deg)
-      rotateZ(${rotateZ}deg)
-    `;
-  });
 
 

@@ -103,6 +103,15 @@ nav a:hover {
 }  */
 
 
+ .hero-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
 
   #imageWrapper {
     width: 250px;
@@ -120,6 +129,7 @@ nav a:hover {
     height: 100%;
     transform-style: preserve-3d;
     transform-origin: right center; /* RIGHT hinge */
+    
   }
 
   .profile-wrapper img {
@@ -152,18 +162,14 @@ nav a:hover {
 
 
 
-
-
-
-
 /* Hi Bubble / Icon */
 .hi-bubble {
  position: absolute;
   bottom: 15px;   /* 🔽 bottom */
-  left: 15px;     /* ⬅ left */
-  bottom: -10px;
-  left: -10px;
-
+     /* ⬅ left */
+  bottom: -4px;
+  left: -4px;
+  
   width: 60px;
   height: 60px;
   background: #5b6cff;
@@ -176,6 +182,7 @@ nav a:hover {
   align-items: center;
   box-shadow: 0 12px 25px rgba(0,0,0,0.3);
   transform: translateZ(120px);
+  
 }
 /* =================/img================= */
 
@@ -290,6 +297,7 @@ body {
 
 /* Parent section */
 .services {
+  border: #222 solid;
   display: flex;
   justify-content: flex-start; /* push content to the left */
   align-items: flex-start;
@@ -364,7 +372,7 @@ body {
 
 /* Container for floating image near icon */
 
-/* .floating-image {
+.floating-image {
   position: absolute;
   width: 220px;
   height: 140px;
@@ -380,26 +388,9 @@ body {
 .floating-image.visible {
   opacity: 1;
   transform: rotate(10deg) skewX(3deg) skewY(-4deg) scale(1);
-} */
-
-.floating-image {
-  position: absolute;
-  width: 220px;
-  height: 140px;
-  object-fit: cover;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transform: translateY(10px) scale(0.95); /* subtle lift instead of skew */
 }
 
-.floating-image.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1); /* smooth pop */
-}
+
 
 
 
