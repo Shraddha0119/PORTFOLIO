@@ -57,17 +57,19 @@ nav a:hover {
   display: flex;
   align-items: center;          /* SAME LINE */
   justify-content: center;
-  gap: 2rem;                    /* tight spacing */
+  gap: 18rem;                   /* tight spacing */
   padding: 2rem;
+  border: 2px solid;
   
 }
 
 /* LEFT */
 .hero-left {
   text-align: right;
-
+ border: 2px solid;
   height: 100vh;
-  width: 50%;
+  width: 33%;
+
 }
 .name1{
   padding-top:267px;
@@ -83,45 +85,20 @@ nav a:hover {
 
  /*============================================== image=================================== */
  
-/* .hero-center{
-  width: 400px;
-  height: 430px;
-  perspective: 1200px;
-  margin: 50px auto;
-}  */
 
-/* .profile-wrapper{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 1s ease;
-}
-.hero-center:hover .profile-wrapper{
-   transform: rotateY(30deg);
-   
-}  */
-
-
- .hero-center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  pointer-events: none;
-}
 
 
   #imageWrapper {
-    width: 250px;
-    height: 350px;
+    border: 2px solid;
+    width: 280px;
+    height: 370px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    perspective: 1400px;
+    perspective: 1200px;
     z-index: 10;
+    
   }
 
   .profile-wrapper {
@@ -129,6 +106,8 @@ nav a:hover {
     height: 100%;
     transform-style: preserve-3d;
     transform-origin: right center; /* RIGHT hinge */
+      
+
     
   }
 
@@ -188,8 +167,10 @@ nav a:hover {
 /* RIGHT */
 .hero-right {
   height: 100vh;
-  width: 50%;
+  width: 33%;
   text-align: left;
+  border: 2px solid;
+  margin-right: 1px;
  
 }
 .name2{
@@ -296,7 +277,7 @@ body {
   display: flex;
   justify-content: flex-start; /* push content to the left */
   align-items: flex-start;
-  width: 100%;
+  /* width: 100%; */
   min-height: 100vh; /* full height for balance */
 }
 
@@ -368,14 +349,14 @@ body {
 /* Container for floating image near icon */
 
 .floating-image {
-  position: absolute;
+  position: fixed;
   width: 220px;
   height: 140px;
   object-fit: cover;
-  opacity: 0;
+  /* opacity: 0; */
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 1000;
+  z-index: 100;
   border-radius: 8px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   transform: rotate(10deg) skewX(3deg) skewY(-4deg) scale(0.95);
@@ -392,11 +373,12 @@ body {
 
 
 
-/* ==============abot me============== */
+/* ==============about me============== */
 
 .about {
   padding: 100px 60px;
   scroll-margin-top: 100px; /* navbar height */
+  border: 2px solid;
   
 }
 

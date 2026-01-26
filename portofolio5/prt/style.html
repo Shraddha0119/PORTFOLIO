@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Shraddha Gunjkar | Web Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- GSAP -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family: Inter, sans-serif;
+  background:#fff;
+  color:#222;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  padding:120px 100px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+
+.hero-left h1{
+  font-size:90px;
+  line-height:0.9;
+}
+.hero-left span{
+  font-size:14px;
+  letter-spacing:2px;
+}
+
+.hero-right h2{
+  font-size:90px;
+}
+.hero-right p{
+  margin-top:10px;
+  color:#555;
+}
+
+/* ====== CARD ====== */
+.card-wrapper{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  perspective:1200px;
+  z-index:5;
+}
+
+.card{
+  width:320px;
+  height:420px;
+  border-radius:24px;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  box-shadow:0 40px 80px rgba(0,0,0,.25);
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hi{
+  position:absolute;
+  bottom:-30px;
+  left:-30px;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#5a67ff;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  transform:translateZ(60px);
+}
+
+/* ================= SERVICES ================= */
+.services{
+  min-height:120vh;
+  padding:120px 100px;
+  display:flex;
+}
+
+.services-left{
+  width:50%;
+}
+
+.services-left h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.services-left p{
+  max-width:420px;
+  color:#555;
+  margin-bottom:50px;
+}
+
+.service{
+  padding:22px 0;
+  border-bottom:1px solid #ddd;
+}
+
+.service-header{
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.arrow{
+  transition:transform .4s ease;
+}
+
+.service.active .arrow{
+  transform:rotate(180deg);
+}
+
+.service-content{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:.5s ease;
+}
+
+.service.active .service-content{
+  max-height:150px;
+  opacity:1;
+}
+
+/* ===== hover image ===== */
+.hover-img{
+  position:fixed;
+  width:220px;
+  height:280px;
+  pointer-events:none;
+  opacity:0;
+  transform:rotate(-6deg);
+  transition:opacity .2s ease;
+  z-index:20;
+}
+.hover-img img{
+  width:100%;
+  height:100%;
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+/* ================= ABOUT ================= */
+.about{
+  min-height:100vh;
+  padding:120px 100px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-left">
+    <span>SHRADHA GUNJKAR</span>
+    <h1>WEB</h1>
+  </div>
+
+  <div class="hero-right">
+    <h2>DEVELOPER</h2>
+    <p>I’m a MERN Stack / Full-Stack Developer</p>
+  </div>
+</section>
+
+<!-- CARD -->
+<div class="card-wrapper">
+  <div class="card" id="card">
+    <img src="hero.jpg" />
+    <div class="hi">Hi</div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="services-left">
+    <h2>WHAT I CAN DO FOR YOU</h2>
+    <p>As a MERN Stack Full-Stack Developer, I build scalable, high-performance web applications.</p>
+
+    <div class="service" data-img="service1.jpg">
+      <div class="service-header">
+        <strong>1. FULL-STACK DEVELOPMENT</strong>
+        <div class="arrow">^</div>
+      </div>
+      <div class="service-content">Complete MERN solutions</div>
+    </div>
+
+    <div class="service" data-img="service2.jpg">
+      <div class="service-header">
+        <strong>2. FRONTEND DEVELOPMENT</strong>
+        <div class="arrow">^</div>
+      </div>
+      <div class="service-content">React + animation-driven UI</div>
+    </div>
+
+    <div class="service" data-img="service3.jpg">
+      <div class="service-header">
+        <strong>3. BACKEND DEVELOPMENT</strong>
+        <div class="arrow">^</div>
+      </div>
+      <div class="service-content">Node, MongoDB, APIs</div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <h2>About Me</h2>
+  <p>Clean, calm section. Motion finishes here.</p>
+</section>
+
+<div class="hover-img" id="hover">
+  <img src="">
+</div>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const card = document.getElementById("card");
+
+/* ===== INITIAL STATE ===== */
+gsap.set(card,{
+  rotateY: -8,
+  rotateZ: -2
+});
+
+/* ===== PHASE 1 ===== */
+gsap.to(card,{
+  rotateY: 12,
+  rotateZ: 4,
+  scrollTrigger:{
+    trigger:"#services",
+    start:"top bottom",
+    end:"top center",
+    scrub:true
+  }
+});
+
+/* ===== PHASE 2 ===== */
+gsap.to(card,{
+  rotateY: 160,
+  rotateZ: 10,
+  x:220,
+  scrollTrigger:{
+    trigger:".about",
+    start:"top bottom",
+    end:"top center",
+    scrub:true
+  }
+});
+
+/* ===== ACCORDION ===== */
+const services=document.querySelectorAll(".service");
+services.forEach(s=>{
+  s.querySelector(".service-header").onclick=()=>{
+    services.forEach(o=>o!==s && o.classList.remove("active"));
+    s.classList.toggle("active");
+  }
+});
+
+/* ===== HOVER IMAGE ===== */
+const hover=document.getElementById("hover");
+const hoverImg=hover.querySelector("img");
+
+services.forEach(s=>{
+  const arrow=s.querySelector(".arrow");
+  arrow.onmouseenter=()=>{
+    hoverImg.src=s.dataset.img;
+    hover.style.opacity=1;
+  };
+  arrow.onmouseleave=()=>hover.style.opacity=0;
+});
+
+window.onmousemove=e=>{
+  hover.style.left=e.clientX+30+"px";
+  hover.style.top=e.clientY+30+"px";
+};
+</script>
+
+</body>
+</html>
+
