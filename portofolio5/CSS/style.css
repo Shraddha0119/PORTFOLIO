@@ -186,36 +186,32 @@ nav a:hover {
 }
 
 /* ================= SERVICES ================= */
-/* General page styling */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 40px;
-  background: #f9f9f9;
-  color: #333;
-}
-
-/* Services section layout */
-/* .services {
+/* Services container */
+.services {
   display: flex;
-  gap: 60px;
-  max-width: 1300px;
-  margin:auto;
-  border: #222 solid;
-} */
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;   /* consistent width */
+  margin: 0 auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
 
 /* Left column */
-/* .services-left {
+.services-left {
   flex: 1;
+  max-width: 600px;   /* fixed width for left side */
+  min-height: 500px;  /* consistent height */
 }
 
+/* Title + description */
 .services-title {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 15px;
   color: #222;
 }
-
 .services-desc {
   font-size: 16px;
   line-height: 1.6;
@@ -223,18 +219,16 @@ body {
   color: #555;
 }
 
-/* Accordion styling */
-/* .accordion {
+/* Accordion */
+.accordion {
   border-top: 1px solid #ddd;
 }
-
 .service-item {
   border-bottom: 1px solid #ddd;
   padding: 20px 0;
+  position: relative; /* for floating image */
 }
-
-/* Service head with icon */
-/* .service-head {
+.service-head {
   font-size: 18px;
   font-weight: 600;
   display: flex;
@@ -242,24 +236,21 @@ body {
   align-items: center;
   cursor: pointer;
   transition: color 0.3s ease;
-} */
-
-/* .service-head:hover {
-  color: #0078d7; /* accent color */
-/* }  */
-
- .icon {
+}
+.service-head:hover {
+  color: #0078d7;
+}
+.icon {
   font-size: 18px;
   color: #333;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .service-item.active .icon {
   transform: rotate(180deg);
   color: #0078d7;
-} 
+}
 
-/* Accordion body with smooth transition */
+/* Service body */
 .service-body {
   max-height: 0;
   overflow: hidden;
@@ -269,103 +260,32 @@ body {
   line-height: 1.5;
   color: #444;
   margin-top: 10px;
-}  
-
-/* Parent section */
-.services {
-  border: #222 solid;
-  display: flex;
-  justify-content: flex-start; /* push content to the left */
-  align-items: flex-start;
-  /* width: 100%; */
-  min-height: 100vh; /* full height for balance */
 }
-
-/* Left side content */
-.services-left {
-  flex: 0 0 50%; /* take half width, adjust as needed */
-  padding: 40px;
-  background-color: #f26e6e;
-  color: #222;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: inset -1px 0 0 #ddd;
-}
-
-/* Typography */
-.services-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.services-desc {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-/* Accordion styling */
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.service-item {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  cursor: pointer;
-}
-
-.service-head {
-  font-weight: bold;
-  font-size: 1.1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* .service-body {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #555;
-} */
-
-.icon {
-  font-size: 1.2rem;
-  color: #007bff;
-}
-
-
-
-
 .service-item.active .service-body {
-  max-height: 200px; /* enough space for text */
+  max-height: 200px;
   opacity: 1;
 }
 
-
-/* Container for floating image near icon */
-
+/* Floating image preview */
 .floating-image {
-  position: fixed;
+  position: absolute;
+  top: 50%;
+  left: 105%; /* appears to the right of the item */
   width: 220px;
   height: 140px;
   object-fit: cover;
-  /* opacity: 0; */
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 100;
+  z-index: 1000;
   border-radius: 8px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  transform: rotate(10deg) skewX(3deg) skewY(-4deg) scale(0.95);
+  transform: translateY(-50%) scale(0.95);
 }
 .floating-image.visible {
   opacity: 1;
-  transform: rotate(10deg) skewX(3deg) skewY(-4deg) scale(1);
+  transform: translateY(-50%) scale(1);
 }
-
 
 
 
