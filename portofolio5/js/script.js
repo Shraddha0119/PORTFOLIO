@@ -95,9 +95,7 @@ window.addEventListener("scroll", () => {
   profileWrapper.style.transform = `rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
 });
 
-
-
-
+// ======== hi bubble =========//
 
 
 
