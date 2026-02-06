@@ -100,9 +100,9 @@ window.addEventListener("scroll", () => {
 
 
 // ==============srvices===============//
-
 document.querySelectorAll('.service-item').forEach(item => {
   const icon = item.querySelector('.icon');
+  const serviceHead = item.querySelector('.service-head'); // target the whole head
   const imageSrc = item.getAttribute('data-image');
 
   // Create floating image element
@@ -111,12 +111,17 @@ document.querySelectorAll('.service-item').forEach(item => {
   floatImg.classList.add('floating-image');
   item.appendChild(floatImg);
 
-  // Toggle accordion on click
-  icon.addEventListener('click', () => {
+  // Toggle accordion when clicking anywhere in service head
+  serviceHead.addEventListener('click', () => {
+    // close others
+    document.querySelectorAll('.service-item').forEach(i => {
+      if (i !== item) i.classList.remove('active');
+    });
+    // toggle current
     item.classList.toggle('active');
   });
 
-  // Show image on hover
+  // Show image on hover (still tied to icon if you want)
   icon.addEventListener('mouseenter', () => {
     floatImg.classList.add('visible');
   });
@@ -126,4 +131,7 @@ document.querySelectorAll('.service-item').forEach(item => {
     floatImg.classList.remove('visible');
   });
 });
+
+
+// ======project section=============== //
 
