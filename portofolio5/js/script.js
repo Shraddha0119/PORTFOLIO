@@ -99,7 +99,7 @@ window.addEventListener("scroll", () => {
 
 
 
-// ==============srvice===============//
+// ==============srvices===============//
 
 document.querySelectorAll('.service-item').forEach(item => {
   const icon = item.querySelector('.icon');
