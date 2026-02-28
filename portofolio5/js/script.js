@@ -4,27 +4,6 @@
       document.getElementById("navbar").innerHTML = data;
     });
 
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach(item => {
-    item.addEventListener("click", () => {
-      // close others
-      faqItems.forEach(i => {
-        if (i !== item) i.classList.remove("active");
-      });
-
-      // toggle current
-      item.classList.toggle("active");
-    });
-  });
-
-
-
-
-
-
-
-
 
 // // ===== IMAGE ROTATE FLIP =====
 
@@ -132,9 +111,66 @@ document.querySelectorAll('.service-item').forEach(item => {
   });
 });
 
+// ===============project================= //
+const projectCards = document.querySelectorAll(".project-card");
+const modal = document.getElementById("project-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-description");
+const closeBtn = document.querySelector(".close-btn");
+
+// Example project data
+const projectData = {
+  1: {
+    title: "E-Commerce Platform",
+    description: "Built with MERN stack, integrated Stripe payments, product management, and user authentication."
+  },
+  2: {
+    title: "Portfolio Website",
+    description: "Responsive portfolio showcasing animations, 3D CSS effects, and smooth scrolling."
+  },
+  3: {
+    title: "Dashboard App",
+    description: "Analytics dashboard with chart.js, REST APIs, and role-based authentication."
+  }
+};
+
+projectCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const id = card.getAttribute("data-project");
+    modalTitle.textContent = projectData[id].title;
+    modalDescription.textContent = projectData[id].description;
+    modal.style.display = "flex";
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+document.querySelectorAll(".project-card").forEach((card, index) => {
+  card.addEventListener("click", () => {
+    const links = [
+      "https://github.com/YourGitHubUsername/EcommerceProject",
+      "https://github.com/YourGitHubUsername/PortfolioProject",
+      "https://github.com/YourGitHubUsername/DashboardProject"
+    ];
+    window.open(links[index], "_blank");
+  });
+});
 
 
 
 
-// ======project section=============== //
+
+// ================faq=============js====//
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
 
