@@ -164,6 +164,7 @@ document.querySelectorAll(".project-card").forEach((card, index) => {
 });
 
 
+
 // ================faq=============js====//
 document.querySelectorAll(".faq-question").forEach(question => {
   question.addEventListener("click", () => {
