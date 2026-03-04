@@ -143,7 +143,6 @@ projectCards.forEach(card => {
   });
 });
 
-
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
