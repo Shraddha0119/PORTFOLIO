@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>shraddha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* =========================
        THEME VARIABLES
@@ -187,6 +188,25 @@
       color: #0b0f1a;
     }
 
+.hero-icons{
+  margin-top:20px;
+  display:flex;
+  gap:20px;
+  font-size:24px;
+}
+
+.hero-icons a{
+  color:white;
+  font-size:26px;
+  transition:0.3s;
+}
+
+.hero-icons a:hover{
+  color:#00ffff;
+  transform: translateY(-5px);
+}
+    
+
     /* =========================
        COLORFUL 3D PROFILE
     ==========================*/
@@ -275,6 +295,40 @@
     .contact { display: grid; gap: 12px; grid-template-columns: 1fr; }
     .contact .btn { width: fit-content; }
 
+    /* ========project=========== */
+
+.project-buttons{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;   /* center buttons */
+  gap:12px;
+}
+
+.project-buttons a{
+  text-decoration:none;
+  padding:8px 18px;
+  border-radius:25px;      /* curved corners */
+  font-size:14px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.view{
+  background:#00bcd4;
+  color:white;
+}
+
+.github{
+  background:#333;
+  color:white;
+}
+
+.project-buttons a:hover{
+  transform:translateY(-4px);      /* lift effect */
+  box-shadow:0 6px 15px rgba(0,0,0,0.3); /* shadow */
+}
+
+
     footer {
       max-width: 1100px;
       margin: 40px auto 60px;
@@ -347,19 +401,29 @@
   <main>
     <!-- Hero / About -->
     <section id="about" class="hero">
-      <div class="hero-text">
-        <h1>🖐️Hi,I Am Shraddha</h1>
-        <p>
-          I’m a fullstack developer specializing in modern web apps:
-          React, Node.js, TypeScript, PostgreSQL, and cloud‑native deployments.
-          I care about clean architecture, performance, and delightful UX.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn primary" href="about.html">My story</a>
-          <a class="btn" href="#contact">Resume</a>
-        </div>
-      </div>
+<div class="hero-text">
+  <h1>🖐️Hi,I Am Shraddha</h1>
+  <p>
+    I’m a fullstack developer specializing in modern web apps:
+    React, Node.js, TypeScript, PostgreSQL, and cloud-native deployments.
+    I care about clean architecture, performance, and delightful UX.
+  </p>
+
+  <div class="cta">
+    <a class="btn primary" href="#projects">View Projects</a>
+    <a class="btn primary" href="about.html">My story</a>
+    <a class="btn" href="#contact">Resume</a>
+  </div>
+
+  <!-- Contact Icons -->
+  <div class="hero-icons">
+    <a href="#contact"><i class="fas fa-phone"></i></a>
+    <a href="mailto:yourmail@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://leetcode.com/" target="_blank"><i class="fa-solid fa-code"></i></a>
+  </div>
+</div>
 
       <!-- Colorful 3D Profile -->
       <div class="profile-3d">
@@ -389,36 +453,47 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="grid projects">
-        <div class="card project-card">
-          <h3>Crypto Portfolio Tracker</h3>
-          <p>Real‑time prices, wallet sync, alerts, and PWA offline support.</p>
-        </div>
-        <div class="card project-card">
-          <h3>Collaborative Docs</h3>
-          <p>CRDT‑based editor with presence, comments, and role‑based access.</p>
-        </div>
-        <div class="card project-card">
-          <h3>E‑commerce Platform</h3>
-          <p>Headless storefront, payments, analytics, and admin dashboard.</p>
-        </div>
-        <div class="card project-card">
-          <h3>DevOps Pipeline</h3>
-          <p>GitOps CI/CD with Docker, health checks, and blue‑green deploys.</p>
-        </div>
-        <div class="card project-card">
-          <h3>Realtime Chat</h3>
-          <p>WebSockets, end‑to‑end encryption, and message search.</p>
-        </div>
-        <div class="card project-card">
-          <h3>Analytics Hub</h3>
-          <p>ETL jobs, dashboards, and anomaly detection with alerts.</p>
-        </div>
+    <!-- ========projects ====== -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="grid projects">
+
+    <div class="card project-card">
+      <img src="images/project1.jpg" alt="project">
+      <h3>Crypto Portfolio Tracker</h3>
+      <p>Real-time prices, wallet sync, alerts, and PWA offline support.</p>
+
+      <div class="project-buttons">
+        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://github.com/yourusername/project1" target="_blank" class="btn github">GitHub</a>
       </div>
-    </section>
+    </div>
+
+    <div class="card project-card">
+      <img src="images/project2.jpg" alt="project">
+      <h3>Collaborative Docs</h3>
+      <p>CRDT-based editor with presence, comments, and role-based access.</p>
+
+      <div class="project-buttons">
+        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://github.com/yourusername/project2" target="_blank" class="btn github">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card project-card">
+      <img src="images/project3.jpg" alt="project">
+      <h3>E-commerce Platform</h3>
+      <p>Headless storefront, payments, analytics, and admin dashboard.</p>
+
+      <div class="project-buttons">
+        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://github.com/yourusername/project3" target="_blank" class="btn github">GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- Contact -->
     <section id="contact">
