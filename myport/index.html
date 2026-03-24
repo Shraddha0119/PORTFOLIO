@@ -327,6 +327,29 @@
   transform:translateY(-4px);      /* lift effect */
   box-shadow:0 6px 15px rgba(0,0,0,0.3); /* shadow */
 }
+.project-card{
+  padding: 16px;
+  overflow: hidden;
+}
+
+.project-card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.project-card h3{
+  margin: 10px 0 8px;
+}
+
+.project-card p{
+  margin: 0;
+  color: var(--muted);
+  min-height: 90px;
+}
 
 
     /* footer {
@@ -529,7 +552,7 @@
 
   <main>
     <!-- Hero / About -->
-<section id="about" class="hero">
+      <section id="about" class="hero">
 <div class="hero-text">
   <h1>🖐️Hi,I Am Shraddha</h1>
   <p>
@@ -565,10 +588,10 @@
           </div>
         </div>
       </div>
-    </section>
+      </section>
 
     <!-- Skills -->
-    <section id="skills">
+      <section id="skills">
       <h2 class="section-title">Skills</h2>
       <div class="grid skills">
         <div class="card"><strong>Frontend:</strong> React, Next.js, Vite, Redux, Tailwind, CSS Modules</div>
@@ -580,18 +603,18 @@
         <div class="card"><strong>Security:</strong> AuthN/AuthZ, JWT, OAuth2, OWASP</div>
         <div class="card"><strong>Tooling:</strong> TypeScript, ESLint, Prettier, PNPM</div>
       </div>
-    </section>
+      </section>
 
     <!-- ========projects ====== -->
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
+      <section id="projects">
+      <h2 class="section-title">Projects</h2>
 
-  <div class="grid projects">
+      <div class="grid projects">
 
     <div class="card project-card">
-      <img src="images/project1.jpg" alt="project">
-      <h3>Crypto Portfolio Tracker</h3>
-      <p>Real-time prices, wallet sync, alerts, and PWA offline support.</p>
+      <img src="./images/wheather.png" alt="project">
+      <h3>Wheather-App</h3>
+      <p>A responsive Weather App that shows real-time weather details like temperature, humidity, wind speed, and condition for any searched city using API integration.</p>
 
       <div class="project-buttons">
         <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
@@ -600,9 +623,9 @@
     </div>
 
     <div class="card project-card">
-      <img src="images/project2.jpg" alt="project">
-      <h3>Collaborative Docs</h3>
-      <p>CRDT-based editor with presence, comments, and role-based access.</p>
+      <img src="./images/travel.png" alt="project">
+      <h3>travel-Templet</h3>
+      <p>A responsive Travel Website that allows users to explore destinations, view travel packages, and plan trips with an attractive and easy-to-use interface.</p>
 
       <div class="project-buttons">
         <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
@@ -611,9 +634,21 @@
     </div>
 
     <div class="card project-card">
-      <img src="images/project3.jpg" alt="project">
-      <h3>E-commerce Platform</h3>
-      <p>Headless storefront, payments, analytics, and admin dashboard.</p>
+      <img src="./images/youtube.png" alt="project">
+      <h3>Youtube-Clone</h3>
+      <p>A responsive YouTube Clone that allows users to search, browse, and watch videos with a clean and modern interface.</p>
+
+      <div class="project-buttons">
+        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://github.com/yourusername/project3" target="_blank" class="btn github">GitHub</a>
+      </div>
+    </div>
+    
+
+    <div class="card project-card">
+      <img src="./images/recipefinder.png" alt="project">
+      <h3>Food-Recipe-Finder</h3>
+      <p>A responsive recipe finder app that helps users search and explore sweet dish recipes with ingredients and preparation details.</p>
 
       <div class="project-buttons">
         <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
@@ -621,11 +656,34 @@
       </div>
     </div>
 
+    <div class="card project-card">
+      <img src="./images/datacheck.png" alt="project">
+      <h3>Employee-Record</h3>
+      <p>A responsive Employee Record System that allows users to add, update, delete, and manage employee details efficiently.</p>
+
+      <div class="project-buttons">
+        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://github.com/yourusername/project3" target="_blank" class="btn github">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card project-card">
+      <img src="./images/youtube.png" alt="project">
+      <h3>Youtube-Clone</h3>
+      <p>A responsive YouTube Clone that allows users to search, browse, and watch videos with a clean and modern interface.</p>
+
+      <div class="project-buttons">
+        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://github.com/yourusername/project3" target="_blank" class="btn github">GitHub</a>
+      </div>
+    </div>
+
+
   </div>
-</section>
+      </section>
 
 
-  </main>
+</main>
 
 <footer class="footer">
   <div class="footer-glow"></div>
