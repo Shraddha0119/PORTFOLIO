@@ -79,6 +79,24 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: 0 8px 24px var(--ring);
     }
+
+    .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
     .nav-links {
       display: none;
       gap: 18px;
@@ -534,7 +552,9 @@
   <header>
     <nav class="nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo" aria-hidden="true">
+          <img src="images/passport.png" alt="Shraddha Logo">
+        </div>
         <span>shraddha • Fullstack Developer</span>
       </div>
       <div class="nav-links">
@@ -619,7 +639,7 @@
       <p>A modern restaurant website built with the MERN stack, featuring online reservations, menu browsing, and a seamless user experience.</p>
 
       <div class="project-buttons">
-        <a href="https://yourprojectlive.com" target="_blank" class="btn view">View</a>
+        <a href="https://mern-project-d8gl.vercel.app/" target="_blank" class="btn view">View</a>
         <a href="https://github.com/yourusername/project3" target="_blank" class="btn github">GitHub</a>
       </div>
     </div>
